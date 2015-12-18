@@ -24,14 +24,14 @@ class Coupon extends Component {
                  defaultValue={couponId}
                  onChange={this.handleChange.bind(this)}/>
         </div>
-          <button onClick={() => {actions.getCoupon(couponId)}}>Get coupon</button>
+          <button onClick={() => {actions.fetchCoupon(couponId)}}>Get coupon</button>
       </div>
     )
   }
 }
 
 Coupon.propTypes = {
-    coupons: PropTypes.array.isRequired,
+    coupon: PropTypes.array.isRequired,
     getCoupon: PropTypes.func.isRequired
 }
 

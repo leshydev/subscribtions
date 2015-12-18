@@ -9,13 +9,12 @@ import Coupon from '../components/Coupon'
 import Summary from '../components/Summary'
 import * as PlanActions from '../actions/plans'
 import * as OfficeActions from '../actions/offices'
-import * as CouponActions from '../actions/coupons'
+import * as CouponActions from '../actions/coupon'
 
 class App extends Component {
   render() {
-    const { plans, offices, card, coupons, planActions, officeActions, couponActions } = this.props
+    const { plans, offices, card, coupon, planActions, officeActions, couponActions } = this.props
     const plan = plans.find(plan => plan.selected)
-    const coupon = coupons.find(coupon => coupon.selected)
 
     return (
       <div>
@@ -34,7 +33,7 @@ App.propTypes = {
   plans: PropTypes.array.isRequired,
   offices: PropTypes.array.isRequired,
   card: PropTypes.object.isRequired,
-  coupons: PropTypes.array.isRequired,
+  coupon: PropTypes.array.isRequired,
   planActions: PropTypes.object.isRequired,
   officeActions: PropTypes.object.isRequired,
   couponActions: PropTypes.object.isRequired
@@ -45,7 +44,7 @@ function mapStateToProps(state) {
     plans: state.plans,
     offices: state.offices,
     card: state.card,
-    coupons: state.coupons
+    coupon: state.coupon
   }
 }
 

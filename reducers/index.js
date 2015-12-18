@@ -2,10 +2,10 @@ import { combineReducers } from 'redux'
 import plans from './plans'
 import offices from './offices'
 import card from './card'
-import coupons from './coupons'
+import coupon from './coupon'
 
 const rootReducer = combineReducers({
-  plans, offices, card, coupons
+  plans, offices, card, coupon
 })
 
 export default rootReducer
