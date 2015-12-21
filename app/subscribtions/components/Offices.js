@@ -11,6 +11,10 @@ class Offices extends Component {
 
     return (
       <div className="offices">
+        <h4>
+          Offices
+        </h4>
+        <hr/>
         <ul className="office-list">
           {offices.map(office =>
             <OfficeItem key={office.id} office={office} {...actions} />

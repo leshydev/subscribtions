@@ -11,29 +11,36 @@ import * as PlanActions from '../actions/plans'
 import * as OfficeActions from '../actions/offices'
 import * as CouponActions from '../actions/coupon'
 
-class App extends Component {
+class Subscribtions extends Component {
   render() {
     const { plans, offices, card, coupon, planActions, officeActions, couponActions } = this.props
     const plan = plans.find(plan => plan.selected)
 
     return (
-      <div>
+      <div className="container">
+        <h1 className="text-center">Subscribtions</h1>
         <Plans plans={plans} actions={planActions} />
         <PlanContent plan={plan} actions={planActions} />
         <Offices offices={offices} actions={officeActions} />
-        <Card card={card} />
-        <Coupon coupon={coupon} actions={couponActions} />
-        <Summary plan={plan} offices={offices} coupon={coupon} />
+        <div>
+          <div className="col-sm-6">
+            <Card card={card} />
+          </div>
+          <div className="col-sm-6">
+            <Coupon coupon={coupon} actions={couponActions} />
+            <Summary plan={plan} offices={offices} coupon={coupon} />
+          </div>
+        </div>
       </div>
     )
   }
 }
 
-App.propTypes = {
+Subscribtions.propTypes = {
   plans: PropTypes.array.isRequired,
   offices: PropTypes.array.isRequired,
   card: PropTypes.object.isRequired,
-  coupon: PropTypes.array.isRequired,
+  coupon: PropTypes.object.isRequired,
   planActions: PropTypes.object.isRequired,
   officeActions: PropTypes.object.isRequired,
   couponActions: PropTypes.object.isRequired
@@ -59,4 +66,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(Subscribtions)

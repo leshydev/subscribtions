@@ -17,11 +17,15 @@ class Summary extends Component {
     const { plan, offices, coupon } = this.props
 
     let officesCount = offices.filter(office => office.selected).length
+    let subscribtion = plan.subscribtions.find(subscribtion => subscribtion.selected)
+    let pricePerOffice = (plan.price * subscribtion.months * (1 - subscribtion.safe / 100)).toFixed(2)
 
     return (
-      <div className="main">
+      <div>
+        <h4>Total</h4>
+        <hr/>
         <div>
-          Price per office: ${plan.price}
+          Price per office: ${pricePerOffice}
         </div>
         <div>
           Offices selected: {officesCount}
@@ -30,7 +34,7 @@ class Summary extends Component {
           Coupon: {coupon.discount}%
         </div>
         <div>
-          Total price: {this.countPrice(plan.price, officesCount, coupon.discount)}
+          Total price: {this.countPrice(pricePerOffice, officesCount, coupon.discount)}
         </div>
       </div>
     )

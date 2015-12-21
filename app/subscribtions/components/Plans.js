@@ -10,12 +10,12 @@ class Plans extends Component {
     const { plans, actions } = this.props
 
     return (
-      <div className="main">
-        <ul className="plan-list">
+      <div>
+        <div className="plan-list row">
           {plans.map(plan =>
             <PlanItem key={plan.id} plan={plan} {...actions} />
           )}
-        </ul>
+        </div>
       </div>
     )
   }

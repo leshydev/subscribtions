@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import {Button} from 'react-bootstrap'
 
 class Coupon extends Component {
   constructor(props, context) {
@@ -18,13 +19,18 @@ class Coupon extends Component {
     let couponId = this.state.couponId
 
     return (
-      <div className="main">
-        <div>
-          <input type="text"
+      <div>
+        <h4>Coupon</h4>
+        <hr/>
+        <div className="input-group">
+          <input type="text" className="form-control"
                  defaultValue={couponId}
                  onChange={this.handleChange.bind(this)}/>
         </div>
-          <button onClick={() => {actions.fetchCoupon(couponId)}}>Get coupon</button>
+        <br/>
+        <div className="button-group">
+          <Button onClick={() => {actions.fetchCoupon(couponId)}}>Get coupon</Button>
+        </div>
       </div>
     )
   }

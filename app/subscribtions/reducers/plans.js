@@ -1,4 +1,4 @@
-import { SELECT_PLAN } from '../constants/PlanActionTypes'
+import { SELECT_PLAN, SELECT_SUBSCRIBTION } from '../constants/PlanActionTypes'
 
 const initialState = [
   {
@@ -18,13 +18,18 @@ const initialState = [
       'advanced search'
     ],
     selected: true,
-    subscriptions: [
+    subscribtions: [
       {
-        months: 1
+        id: 0,
+        months: 1,
+        safe: 0,
+        selected: false
       },
       {
+        id: 1,
         months: 3,
-        safe: 10
+        safe: 10,
+        selected: true
       }
     ]
   },
@@ -37,17 +42,24 @@ const initialState = [
       'advanced search',
       'unlimited access'
     ],
-    subscriptions: [
+    subscribtions: [
       {
-        months: 1
+        id: 2,
+        months: 1,
+        safe: 0,
+        selected: false
       },
       {
+        id: 3,
         months: 2,
-        safe: 15
+        safe: 15,
+        selected: false
       },
       {
+        id: 4,
         months: 3,
-        safe: 20
+        safe: 20,
+        selected: false
       }
     ]
   }
@@ -61,6 +73,13 @@ export default function plans(state = initialState, action) {
               Object.assign({}, plan, { selected: true }) :
               Object.assign({}, plan, { selected: false })
       )
+    case SELECT_SUBSCRIBTION:
+      state[action.planId].subscribtions = state[action.planId].subscribtions.map(subscribtion =>
+        subscribtion.id === action.subscribtionId ?
+            Object.assign({}, subscribtion, { selected: true }) :
+            Object.assign({}, subscribtion, { selected: false })
+      )
+      return state.map(plan => Object.assign({}, plan))
     default:
       return state
   }

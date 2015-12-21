@@ -1,0 +1,18 @@
+.plan-list {
+    margin: 3% 10%;
+}
+.plan-list > div {
+    box-sizing: border-box;
+    height: 150px;
+}
+.plan-list .selected {
+    border: 1px solid gray;
+    border-radius: 5px;
+ }
+
+h4 {
+    margin-top: 3%;
+}
+li {
+    list-style: none;
+}

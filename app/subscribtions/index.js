@@ -2,10 +2,14 @@ import 'babel-core/polyfill'
 import React from 'react'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import rootReducer from './reducers/index';
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import App from './containers/App'
+
+require ('../base/bootstrap/bootstrap.css')
+require ('./index.css')
+
+import rootReducer from './reducers/index'
+import Subscribtions from './containers'
 
 let createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
 let store = createStoreWithMiddleware(rootReducer)
@@ -14,7 +18,7 @@ window.store = store
 
 render(
   <Provider store={store}>
-    <App />
+    <Subscribtions />
   </Provider>,
   document.getElementById('root')
 )
