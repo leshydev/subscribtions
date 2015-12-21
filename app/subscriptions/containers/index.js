@@ -11,14 +11,14 @@ import * as PlanActions from '../actions/plans'
 import * as OfficeActions from '../actions/offices'
 import * as CouponActions from '../actions/coupon'
 
-class Subscribtions extends Component {
+class Subscriptions extends Component {
   render() {
     const { plans, offices, card, coupon, planActions, officeActions, couponActions } = this.props
     const plan = plans.find(plan => plan.selected)
 
     return (
       <div className="container">
-        <h1 className="text-center">Subscribtions</h1>
+        <h1 className="text-center">Subscriptions</h1>
         <Plans plans={plans} actions={planActions} />
         <PlanContent plan={plan} actions={planActions} />
         <Offices offices={offices} actions={officeActions} />
@@ -36,7 +36,7 @@ class Subscribtions extends Component {
   }
 }
 
-Subscribtions.propTypes = {
+Subscriptions.propTypes = {
   plans: PropTypes.array.isRequired,
   offices: PropTypes.array.isRequired,
   card: PropTypes.object.isRequired,
@@ -66,4 +66,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Subscribtions)
+)(Subscriptions)

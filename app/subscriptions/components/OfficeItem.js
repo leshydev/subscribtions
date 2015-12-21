@@ -10,15 +10,13 @@ class OfficeItem extends Component {
     const { office, selectOffice } = this.props
 
     return (
-      <li>
-        <div className="checkbox">
-          <label>
-            <input name="office" type="checkbox" checked={office.selected}
-                   onChange={id => {selectOffice(office.id)}}/>
-            {office.location}
-          </label>
-        </div>
-      </li>
+      <div className="checkbox">
+        <label>
+          <input name="office" type="checkbox" checked={office.selected}
+                 onChange={id => {selectOffice(office.id)}}/>
+          {office.location}
+        </label>
+      </div>
     )
   }
 }

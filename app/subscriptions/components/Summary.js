@@ -17,8 +17,8 @@ class Summary extends Component {
     const { plan, offices, coupon } = this.props
 
     let officesCount = offices.filter(office => office.selected).length
-    let subscribtion = plan.subscribtions.find(subscribtion => subscribtion.selected)
-    let pricePerOffice = (plan.price * subscribtion.months * (1 - subscribtion.safe / 100)).toFixed(2)
+    let subscription = plan.subscriptions.find(subscription => subscription.selected)
+    let pricePerOffice = subscription ? (plan.price * subscription.months * (1 - subscription.safe / 100)).toFixed(2) : 0
 
     return (
       <div>

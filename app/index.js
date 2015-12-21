@@ -1,1 +1,1 @@
-import './subscribtions'
+import './subscriptions'
