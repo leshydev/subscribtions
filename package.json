@@ -1,7 +1,7 @@
 {
-  "name": "redux-subscribtions-example",
+  "name": "redux-subscriptions-example",
   "version": "0.0.0",
-  "description": "Redux subscribtions",
+  "description": "Redux subscriptions",
   "scripts": {
     "start": "node server.js"
   },
