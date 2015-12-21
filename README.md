@@ -1,2 +1,2 @@
-# subscribtions
+# Subscriptions
 webpack, react, redux
